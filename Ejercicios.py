@@ -16,27 +16,32 @@ print(orden(l))
 l = (3, 4)
 l2 = (5, 4)
 
-##1
-def encaja(lista1, lista2):
+
+# 1 corregir recorriendo la lista
+def encaja1(lista1, lista2):
     if lista1[1] == lista2[0] or lista1[1] == lista2[1]:
         return "encaja"
     else:
         return "no encaja"
 
 
-print(encaja(l, l2))
-##2
-l3="3-4"
-l4="2-5"
+print(encaja1(l, l2))
 
-def encaja(ls1, ls2):
+# 2
+l3 = "3-4"
+l4 = "2-5"
+
+
+def encaja2(ls1, ls2):
     lista1 = ls1.split()
     lista2 = ls2.split()
 
-    if  lista1== lista2[0] or lista1[1] == lista2[1]:
+    if lista1 == lista2[0] or lista1[1] == lista2[1]:
         return "encaja"
     else:
         return "no encaja"
 
-print(encaja(l3, l4))
-#7.3
+
+print(encaja2(l3, l4))
+
+# 7.3

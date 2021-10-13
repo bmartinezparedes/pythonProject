@@ -17,9 +17,10 @@ l = (3, 4)
 l2 = (5, 4)
 
 
-# 1 corregir recorriendo la lista
+# 1
 def encaja1(lista1, lista2):
-    if lista1[1] == lista2[0] or lista1[1] == lista2[1]:
+    #Uso set() para que me compare las listas, con & consigo que encuentre alguno que coincida entre las dos listas
+    if set(lista1) & set(lista2):
         return "encaja"
     else:
         return "no encaja"
@@ -33,10 +34,10 @@ l4 = "2-5"
 
 
 def encaja2(ls1, ls2):
-    lista1 = ls1.split()
-    lista2 = ls2.split()
-
-    if lista1 == lista2[0] or lista1[1] == lista2[1]:
+    #con el split(termino con el que separar) lo uso para crear una lista a partir del stream
+    lista1 = ls1.split("-")
+    lista2 = ls2.split("-")
+    if set(lista1) & set(lista2):
         return "encaja"
     else:
         return "no encaja"
@@ -45,3 +46,21 @@ def encaja2(ls1, ls2):
 print(encaja2(l3, l4))
 
 # 7.3
+#1
+lNombres=("Patri","Britza","Hector","Brais","Joel")
+
+
+def estimadoUsuario(lista):
+    for n in lista:
+        print("Estimado "+n)
+
+estimadoUsuario(lNombres)
+#2
+def estimadoUsuarioPosicion(lista,posicion,cantidad):
+    num=0
+    for n in lista[posicion:]:
+        while num <cantidad:
+           print("Estimado "+n)
+            num=num+1
+
+estimadoUsuarioPosicion(lNombres,1,2)

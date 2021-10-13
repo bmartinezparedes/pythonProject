@@ -122,5 +122,42 @@ l3= [n for n in l if n % 2 ==0]
 
 print(l3)
 
+#Xeradores
+
+l5=(n**2 for n in l)
+print(l5)
+
+def meuXerador(n,m,s):
+    while (n<=m):
+        yield n
+        n+=s
+xerador=meuXerador(7,15,2)
+print(xerador)
+
+for n in xerador:
+    print(n)
+
+#for (int i=7, n<=m, i+=s) esto en java
+
+for i in range(7,16,2): #esto igual a lalinea 134
+    print(i)
+
+r=range(7,16,2)
+print(type(r))
 
 
+#cadeas de caracteres
+
+cadeas= "Python para todos"
+print(cadeas[3])
+print(cadeas[1:18:2])
+
+print(cadeas.count("o"))
+print(len(cadeas))
+print(cadeas.find("o",5,14))
+
+cadea2=cadeas.join(("Hola ","a ","todos ", " no ", "presente ", "curso "))
+print(cadea2)
+
+print(cadeas.split(" "))
+print(cadeas.replace(' ',"_"))

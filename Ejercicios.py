@@ -43,10 +43,10 @@ def encaja2(ls1, ls2):
         return "no encaja"
 
 
-print(encaja2(l3, l4))
+#print(encaja2(l3, l4))
 
 # 7.3
-#1
+# 1
 lNombres=("Patri","Britza","Hector","Brais","Joel")
 
 
@@ -64,3 +64,21 @@ def estimadoUsuarioPosicion(lista,posicion,cantidad):
             num=num+1
 
 estimadoUsuarioPosicion(lNombres,1,2)
+
+# 7.5
+listaEnteros=(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30)
+
+def primos(listaNumeros):
+    listaPrimos=[]
+    for l in listaNumeros:
+        if l < 1:
+            return False
+        elif l==2:
+            listaPrimos.append(l)
+        else:
+            for n in range(2, l):
+                if l % n ==0:
+                    return False
+            listaPrimos.append(l)
+    print(listaPrimos)
+primos(listaEnteros)

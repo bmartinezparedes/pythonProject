@@ -12,13 +12,17 @@ class Aplicacion:
         wndFiestra.add(caixaV)
         self.txtNome = Gtk.Entry()
         self.txtNome.set_text("Escribe o teu nome")
+        self.txtNome.connect("activate",self.ontxtNomeActivated)
         caixaV.pack_end(self.txtNome,True,False,6)
-        self.lblTexto=Gtk.Entry()
-        self.lblTexto.set_text("Escribe o teu nome")
+        self.lblTexto=Gtk.Label()
+        self.lblTexto.set_text("tu nombre")
         caixaV.pack_end(self.lblTexto,True,True,6)
         self.btnSaudo=Gtk.Button()
         self.btnSaudo.set_label("Saudo")
+        self.btnSaudo.connect("clicked",self.onBtnSaudoClicked)
         caixaV.pack_end(self.btnSaudo,False,False,6)
+
+        wndFiestra.connect("destroy",Gtk.main_quit)
         wndFiestra.show_all()
 
         sinais = {"on_FiestraPrincipal_destroy": Gtk.main_quit,

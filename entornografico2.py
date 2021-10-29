@@ -25,10 +25,6 @@ class Aplicacion:
         wndFiestra.connect("destroy",Gtk.main_quit)
         wndFiestra.show_all()
 
-        sinais = {"on_FiestraPrincipal_destroy": Gtk.main_quit,
-                  "on___glade_unnamed_4_activate": self.onBtnSaudoClicked,
-                  "on___glade_unnamed_3_clicked": self.ontxtNomeActivated}
-
     #aqui el boton introduce el nombre en el label
     def onBtnSaudoClicked(self,boton):
         self.introducirNombreEnLabel()

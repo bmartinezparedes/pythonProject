@@ -6,19 +6,25 @@ from gi.repository import Gtk
 
 class Aplicacion:
     def __init__(self):
-        builder = Gtk.Builder()
-        builder.add_from_file("saudo.glade")
-
-        fiestra=builder.get_object("FiestraPrincipal")
-        self.txtNome = builder.get_object("txtNome")
-        self.btnSaudo=builder.get_object("btnSaudo")
-        self.lblTexto =builder.get_object("lblTexto")
+        wndFiestra=Gtk.Window()
+        wndFiestra.set_title("A segunda aplicacion")
+        caixaV= Gtk.Box()
+        wndFiestra.add(caixaV)
+        self.txtNome = Gtk.Entry()
+        self.txtNome.set_text("Escribe o teu nome")
+        caixaV.pack_end(self.txtNome,True,False,6)
+        self.lblTexto=Gtk.Entry()
+        self.lblTexto.set_text("Escribe o teu nome")
+        caixaV.pack_end(self.lblTexto,True,True,6)
+        self.btnSaudo=Gtk.Button()
+        self.btnSaudo.set_label("Saudo")
+        caixaV.pack_end(self.btnSaudo,False,False,6)
+        wndFiestra.show_all()
 
         sinais = {"on_FiestraPrincipal_destroy": Gtk.main_quit,
                   "on___glade_unnamed_4_activate": self.onBtnSaudoClicked,
                   "on___glade_unnamed_3_clicked": self.ontxtNomeActivated}
-        builder.connect_signals(sinais)
-        fiestra.show_all()
+
     #aqui el boton introduce el nombre en el label
     def onBtnSaudoClicked(self,boton):
         self.introducirNombreEnLabel()

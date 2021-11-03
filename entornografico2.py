@@ -8,7 +8,7 @@ class Aplicacion:
     def __init__(self):
         wndFiestra=Gtk.Window()
         wndFiestra.set_title("A segunda aplicacion")
-        caixaV= Gtk.Box()
+        caixaV= Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         wndFiestra.add(caixaV)
         self.txtNome = Gtk.Entry()
         self.txtNome.set_text("Escribe o teu nome")

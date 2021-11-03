@@ -90,3 +90,32 @@ else:
     print("A division realizouse")
 finally:
     print("A division fixose ou non")
+
+
+
+
+def unha_funcion(p1,p2):
+    print(p1)
+    print(p2)
+
+unha_funcion("hola", 2.366)
+unha_funcion(p2=2.366,p1="hola")
+def unha_funcion2(p1="p1",p2=3.000):
+    print(p1)
+    print(p2)
+unha_funcion2()
+unha_funcion2(p1="KISKOS")
+
+def suma(*n):
+    suma= 0
+    for numeros in n:
+        suma =suma +numeros
+    return suma
+print(suma(1,2,3,4,5,6))
+def suma2(n1,n2,**numeros):
+    suma=n1+n2
+    for n in numeros.items():
+        suma=suma+n[1]
+    return suma
+
+print(suma2(1,2,numero3=3, numeros4=4))

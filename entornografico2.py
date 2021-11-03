@@ -10,17 +10,20 @@ class Aplicacion:
         wndFiestra.set_title("A segunda aplicacion")
         caixaV= Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         wndFiestra.add(caixaV)
+
         self.txtNome = Gtk.Entry()
         self.txtNome.set_text("Escribe o teu nome")
         self.txtNome.connect("activate",self.ontxtNomeActivated)
-        caixaV.pack_end(self.txtNome,True,False,6)
+        caixaV.pack_start(self.txtNome,True,False,6)
+
         self.lblTexto=Gtk.Label()
         self.lblTexto.set_text("tu nombre")
-        caixaV.pack_end(self.lblTexto,True,True,6)
+        caixaV.pack_start(self.lblTexto,True,True,6)
+
         self.btnSaudo=Gtk.Button()
         self.btnSaudo.set_label("Saudo")
         self.btnSaudo.connect("clicked",self.onBtnSaudoClicked)
-        caixaV.pack_end(self.btnSaudo,False,False,6)
+        caixaV.pack_start(self.btnSaudo,False,False,6)
 
         wndFiestra.connect("destroy",Gtk.main_quit)
         wndFiestra.show_all()
